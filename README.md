@@ -1,0 +1,2 @@
+# SpeechReco
+Android版SpeechRecoサンプル
