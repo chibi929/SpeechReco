@@ -84,6 +84,12 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
+    /**
+     * SpeechRecognizer を使うパターン
+     *   途中経過コールバックである onPartialResults はたくさん飛んでくるのだが、
+     *   WebSpeechAPI ほどの途中経過が入ってこない。。。
+     *   感覚的には、 onResults よりは早いタイミングで呼ばれるくらい。。。
+     */
     private fun results(data: Bundle?, textView: TextView) {
         var resultsString = ""
 
@@ -95,6 +101,9 @@ class MainActivity : AppCompatActivity() {
         textView.text = resultsString
     }
 
+    /**
+     * RecognizerIntent を使うパターン
+     */
     private fun results(data: Intent?) {
         var resultsString = ""
 
